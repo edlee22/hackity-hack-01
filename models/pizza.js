@@ -1,10 +1,9 @@
 //
 
 const mongoose = require("../mongoose");
-const Schemas = mongoose.Schema;
 
 // pizza schema
-const pizzaSchema = new Schemas({
+const pizzaSchema = new mongoose.Schema({
   name: {
     type: String,
     unique: true,
@@ -18,10 +17,10 @@ const pizzaSchema = new Schemas({
     type: Number,
     required: true,
   }
-);
+});
 
 // create model from schema
-const Pizzas = Mongoose.model("Pizza", pizzaSchema);
+const Pizzas = mongoose.model("Pizza", pizzaSchema);
 
 // export model
-module.export = Pizza;
+module.exports = Pizzas;
